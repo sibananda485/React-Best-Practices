@@ -72,9 +72,9 @@ function UserList() {
 
 ## ✅ Correct Pattern (Container + View)
 
-### `UserList.tsx`
+### `UserListContainer.tsx`
 ```tsx
-import { UserListView } from './UserList.view'
+import { UserList } from './UserList'
 import { useUserList } from './useUserList'
 
 export function UserListContainer() {
@@ -85,7 +85,7 @@ export function UserListContainer() {
   } = useUserList()
 
   return (
-    <UserListView
+    <UserList
       users={users}
       isLoading={isLoading}
       onDeleteUser={onDeleteUser}
@@ -96,7 +96,7 @@ export function UserListContainer() {
 
 ### `UserList.tsx`
 ```tsx
-export function UserListView({ users, isLoading, onDeleteUser }) {
+export function UserList({ users, isLoading, onDeleteUser }) {
   if (isLoading) return <Spinner />
 
   return (
@@ -285,9 +285,9 @@ export function CompanyTicker() {
 Responsibility splitting and separation of concern
 - `useCompanies` -> Hooks that handles fetching companies
 - `useCompanyTicker` -> Hooks that handles fetching company summary
-- `CompanyTable` -> Container component that passes data and deligate responsibility to Table component (Presentation component) for ui
-- `CompanyTicker` -> Container component that passes data and deligate responsibility to Tickers component (Presentation component) for ui
-- `CompanyManagementPage` -> Does nothing just compose two componenent and ad 
+- `CompanyTable` -> Container component that passes data and deligate responsibility to Table component (Presentation component) for ui rendering.
+- `CompanyTicker` -> Container component that passes data and deligate responsibility to Tickers component (Presentation component) for ui rendering.
+- `CompanyManagementPage` -> Does nothing just compose two componenent and adds styling to fit in the layout.
 
 Each unit now has **one reason to change**.
 
