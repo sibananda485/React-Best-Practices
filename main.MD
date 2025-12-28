@@ -132,14 +132,6 @@ Do **not** introduce a container if:
 
 ---
 
-## Code Review Checklist
-- [ ] Is business logic inside a container or hook?
-- [ ] Is the view component free from side effects?
-- [ ] Is JSX complexity kept out of containers?
-- [ ] Are props clearly typed and minimal?
-
----
-
 ## Summary
 Container components are **coordination layers**, not UI layers.  
 They make the codebase scalable, testable, and team-friendly.
