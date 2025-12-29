@@ -273,7 +273,7 @@ export function CompanyTicker() {
 
 ### `CompanyManagementPage.tsx`
 ```tsx
-export function CompanyTicker() {
+export function CompanyManagementPage() {
 
   return ( <div className="p-5 space-y-4">
             <CompanyTicker/>
